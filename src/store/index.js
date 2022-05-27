@@ -49,12 +49,12 @@ export default createStore({
           commit('SETSTATUS' , {status:'error',message: error.response.error});
       });
     },
-    deletePictures:({commit},{id}) => {
+    deletePicture:({commit},{id}) => {
         //recupere le token
         axios.delete(`/pictures/${id}`)
         // attendre la reponse (comme fetch)
         .then(response => {
-          commit('SETSTATUS' , {status:'success' , message: response.message});    
+          commit('SETSTATUS' , {status:'success' , message: response.message});   
         }) //retourne la repose des data dans l'objet vi
         .catch(error => { 
           commit('SETSTATUS' , {status:'error',message: error.response.error});

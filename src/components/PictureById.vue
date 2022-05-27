@@ -16,10 +16,9 @@
                             <span class="font-bold mr-8">{{picture.tags}}</span> 
                         </div>
                         <div>
-                            <font-awesome-icon  :icon="['fas', 'trash-can']" class="hover:cursor-pointer  text-white duration-500 border-2 hover:scale-90 bg-[red] border-black  ml-6 w-3 py-[0.3rem] px-[0.4rem]  rounded-full"/>
+                            <font-awesome-icon  @click="deletePicture()" :icon="['fas', 'trash-can']" class="hover:cursor-pointer  text-white duration-500 border-2 hover:scale-90 bg-[red] border-black  ml-6 w-3 py-[0.3rem] px-[0.4rem]  rounded-full"/>
                             <font-awesome-icon @click="switchToUpdate()" :icon="['fas', 'pen']" class="hover:cursor-pointer  duration-500 border-2 hover:scale-90 bg-[#3E869D] border-black  ml-3 w-3 py-[0.3rem] px-[0.4rem]  rounded-full"/>
                         </div>
-                        
                     </div>
                 </div> 
             </div>
@@ -52,6 +51,24 @@ export default {
         },
         switchToDisplayPicture() {              
             this.mode = 'bydefault';
+        },
+        deletePicture() {
+            if (confirm("Etes vous sur , cette action est irréversible !")) {
+                this.$store.dispatch('deletePicture',{id:this.picture.id})
+                .then( () =>{
+                    this.CancelDisplayPicture()
+                    this.$store.commit('SETSTATUS' , {status:'success',message:`Votre Picture a bien etait suprimer`}); //type et payload
+                })
+                .catch(error => {
+                    this.$store.commit('SETSTATUS' , {status:'error',message:`Impossible de supprimer la picture ${error}`}); //type et payload
+                })
+            } else {
+                this.switchToDisplayPicture()
+            }    
+        },
+        refreshPicture(){
+            //dispatch apliquer l'action (recuperer a nouveau les post)
+            this.$store.dispatch('getAllPictures')
         },
 
     },

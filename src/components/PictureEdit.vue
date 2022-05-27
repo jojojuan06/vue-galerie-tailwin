@@ -17,7 +17,7 @@
                 </label>
                 <!-- au clic appel a la methode createNewAccount--> 
                 <div class="w-full flex justify-between">
-                    <bouton   v-on:click="updatePicture"  class="cursor-pointer hover:bg-[#3e869d] bg-transparent text-black font-semibold hover:text-white py-2 px-2 border-2 border-[#3e869d]  hover:border-transparent rounded">
+                    <bouton   @click="updatePicture"  class="cursor-pointer hover:bg-[#3e869d] bg-transparent text-black font-semibold hover:text-white py-2 px-2 border-2 border-[#3e869d]  hover:border-transparent rounded">
                         modifier
                     </bouton>
                     <bouton   @click="CancelEditPicture"  class=" ml-4 cursor-pointer hover:bg-[#3e869d] bg-transparent text-black font-semibold hover:text-white py-2 px-2 border-2 border-[#3e869d]  hover:border-transparent rounded">

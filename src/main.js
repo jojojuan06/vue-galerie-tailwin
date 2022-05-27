@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import '@/assets/css/index.css'
-//const cors = require('cors')({ Origin: true });
 // via npm install @mdi/font
 import "@mdi/font/css/materialdesignicons.css";
 /* import the fontawesome core */
@@ -27,7 +26,6 @@ html.setAttribute('lang', 'fr')
 app.component('font-awesome-icon',FontAwesomeIcon)
 app.use(router)
 app.use(store)
-//app.use(cors()) // Use this after the variable declaration
 app.mount('#app')
 
 
