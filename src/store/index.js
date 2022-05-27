@@ -27,6 +27,12 @@ export default createStore({
     PICTURE_INFOS(state, picture) {
       state.pictureInfos = picture;
     },
+    RESET_STATUS(state){
+      state.status = '';
+    },
+    RESET_MESSAGE(state){
+      state.message = '';
+    },
   },
   actions: {
     getOnePicture: ({commit}, id) => { 

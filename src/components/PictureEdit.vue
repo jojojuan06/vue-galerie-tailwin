@@ -73,6 +73,7 @@ export default {
                 updatedPicture:updatedPicture
             }).then(function (){
                 This.CancelEditPicture()
+                this.$store.commit('SETSTATUS' , {status:'success',message:`Votre Picture a etait mis a jour`});
             }),
             function (error) {
                 console.log(error);

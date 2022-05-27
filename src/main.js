@@ -12,10 +12,10 @@ import { faTwitter, faYoutube, faInstagram, faLinkedin, faDiscord , faJs, faHtml
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
-import { faFile,faCube ,faFileLines,faCircle,faSun,faMoon,faArrowUp,faArrowLeft,faPen,faTrashCan} from '@fortawesome/free-solid-svg-icons'
+import { faFile,faCube ,faFileLines,faCircle,faSun,faMoon,faArrowUp,faArrowLeft,faPen,faTrashCan,faXmark} from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faTwitter, faYoutube, faInstagram, faLinkedin, faDiscord, faJs,faHtml5,faVuejs, faFile, faCube,faFileLines, faCircle, faSun, faMoon,faArrowUp,faArrowLeft,faPen,faTrashCan)
+library.add(faTwitter, faYoutube, faInstagram, faLinkedin, faDiscord, faJs,faHtml5,faVuejs, faFile, faCube,faFileLines, faCircle, faSun, faMoon,faArrowUp,faArrowLeft,faPen,faTrashCan,faXmark)
 
 const app = createApp(App)
 //change langue html default
