@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <img alt="Vue logo" src="../assets/logo.png" class="w-8 flex justify-center items-center">
   </div>
-</template>
+  <div class="flex justify-center items-center">
+    <h1>{{ msg }}</h1>
+  </div>
+  <div class="flex flex-wrap justify-center items-center">
+    <PictureHome/>
+  </div>
+  </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import PictureHome from '@/components/PictureHome.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    PictureHome
+  },
+  data() {
+    return {
+      msg:"ma galleries d'images",
+    }
   }
 }
 </script>

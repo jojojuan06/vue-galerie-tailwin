@@ -1,30 +1,28 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+<header>
+  <nav class="text-white flex justify-center items-center bg-[#3e869d] font-bold h-10">
+    <router-link to="/">Pictures</router-link>
   </nav>
-  <router-view/>
+  </header>
+  <main class="flex flex-col justify-center items-center h-screen">
+      <router-view/>
+  </main>
+  <footer class="pt-6 mt-12 text-white bg-[#3e869d]"  style="max-height: 150px;">
+    <FooterApp />
+  </footer>
 </template>
 
+<script>
+import FooterApp from './components/FooterApp.vue'
+
+export default {
+  components: {
+    FooterApp
+},
+}
+</script>
+
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
