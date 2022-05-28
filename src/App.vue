@@ -6,8 +6,8 @@
 </header>
 <main class="flex flex-col justify-center items-center md:h-screen">
       <router-view/>
-        <SuccessAlert @statusMessageReset="statusMessageReset" v-if="status == 'success'"/>
-        <DangerAlert @statusMessageReset="statusMessageReset" v-if="status == 'error'" />
+      <SuccessAlert @statusMessageReset="statusMessageReset" v-if="status == 'success'"/>
+      <DangerAlert @statusMessageReset="statusMessageReset" v-if="status == 'error'" />
 </main>
   <footer class="pt-6  text-white bg-[#3e869d]"  style="max-height: 150px;">
     <FooterApp />
