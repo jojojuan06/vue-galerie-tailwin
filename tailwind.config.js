@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       screens:{
-        'tablet': '880px',
+        'tablet': '680px',
+        'midScreen':'880px',
       },
       keyframes: {
         slideRight: {
@@ -13,7 +14,10 @@ module.exports = {
       },
       animation: {
         'slideRight': 'slideRight 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
-      } 
+      },
+      colors: {
+        'PinkTransparent': 'RGBA(237,105,189,0)',
+      }, 
     },
   },
   plugins: [],
