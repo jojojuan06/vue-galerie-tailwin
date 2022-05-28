@@ -4,7 +4,7 @@
     <a href="/"   class="duration-500 decoration-2 underline-offset-4 underline decoration-PinkTransparent hover:decoration-[#ED69BD]">Pictures</a>
   </nav>
 </header>
-<main class="flex flex-col justify-center items-center tablet:h-screen">
+<main class="flex flex-col justify-center items-center h-screen">
       <router-view/>
       <SuccessAlert @statusMessageReset="statusMessageReset" v-if="status == 'success'"/>
       <DangerAlert @statusMessageReset="statusMessageReset" v-if="status == 'error'" />

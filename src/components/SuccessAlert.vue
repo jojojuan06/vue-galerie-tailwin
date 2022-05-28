@@ -1,5 +1,5 @@
 <template>
-<div class="bg-green-100 flex border-2  border-green-400 text-green-700 px-4 py-3 rounded  animate-slideRight fixed bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm" role="alert">
+<div class="border-t-8 bg-green-100 flex  border-green-400 text-green-700 px-4 py-3 rounded  animate-slideRight fixed bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm" role="alert">
         <div class="flex justify-between items-center w-full">
             <div class="font-bold">{{ this.$store.state.message }}</div>
             <div>
