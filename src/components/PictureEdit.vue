@@ -1,6 +1,6 @@
 <!-- composant permettent d'encapsuler un ensemble d'éléments HTML, de façon réutilisable et facilement maintenable. -->
 <template>
-    <div class="bg-[#d9d9d9] p-4 rounded-t-lg w-[300px]">
+    <div class="bg-[#d9d9d9] p-4 rounded-t-lg w-[300px] border-2 border-black mt-4">
         <h2 class="bg-[#3e869d] rounded-t-lg text-center text-white font-bold">modifier l'image</h2>
             <form>
                 <label class="block mb-6">
@@ -73,7 +73,7 @@ export default {
                 updatedPicture:updatedPicture
             }).then(function (){
                 This.CancelEditPicture()
-                this.$store.commit('SETSTATUS' , {status:'success',message:`Votre Picture a etait mis a jour`});
+                //this.$store.commit('SETSTATUS' , {status:'success',message:`Votre Picture a etait mis a jour`});
             }),
             function (error) {
                 console.log(error);

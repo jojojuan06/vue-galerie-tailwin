@@ -60,7 +60,7 @@ export default createStore({
         axios.delete(`/pictures/${id}`)
         // attendre la reponse (comme fetch)
         .then(response => {
-          commit('SETSTATUS' , {status:'success' , message: response.message});   
+          commit('SETSTATUS' , {status:'success' , message: ('votre picture est bien supprimer')});   
         }) //retourne la repose des data dans l'objet vi
         .catch(error => { 
           commit('SETSTATUS' , {status:'error',message: error.response.error});
