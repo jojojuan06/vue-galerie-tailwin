@@ -45,6 +45,7 @@ export default {
 <style>
 @import url('@/assets/css/alert.css');
 body {
-  background-color: #d9d9d9;
+  position: relative;
+  background-image: linear-gradient(176deg, #3e869d 60%, #F4F4F4 calc(60% + 2px));
 }
 </style>
