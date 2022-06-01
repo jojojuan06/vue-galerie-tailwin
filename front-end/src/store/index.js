@@ -80,6 +80,28 @@ export default createStore({
       });
     }  
   },
+  createPicture: ({commit}, { pictures }) => {
+    return new Promise((resolve, reject) => {
+      let picture = new pictures({
+        name:pictures.name,
+        path:pictures.path,
+        tags:pictures.tags
+      });
+      //Pour invoquer   commit  mutation / Payload en 2e argument
+      commit('SETSTATUS' , {status:'loading',message:''}); 
+      //requete Post enregistrer l'utilisateur
+      axios.post('/pictures/', picture) 
+      .then(function (response) { 
+      commit('SETSTATUS' , {status:'success',message: response.data.message});
+      })
+      .catch(function (error) {
+        //message du back-end
+        commit('SETSTATUS' , {status:'error',message: error.response.data.message }); 
+        //retourne une erreur
+        reject(error); 
+      });
+    });
+  },
   modules: {
   }
 })

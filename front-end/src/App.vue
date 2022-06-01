@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="pb-4  md:pb-0">
   <nav class="text-white flex justify-center items-center bg-[#3e869d] font-bold h-12 mb-10 midScreen:mb-0 border-b-4 border-[#ED69BD]">
     <a href="/"   class="duration-500 decoration-2 underline-offset-4 underline decoration-PinkTransparent hover:decoration-[#ED69BD]">Pictures</a>
   </nav>
