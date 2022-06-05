@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-        <PictureEdit v-if="mode == 'update'" :picture="picture" :mode="mode" @CancelEditPicture="switchToDisplayPicture()"/>
+        <PictureEdit v-if="mode == 'update'" :picture="picture" :mode="mode" @CancelEditPicture="switchToDisplayPicture"/>
 </template>
 
 <script>

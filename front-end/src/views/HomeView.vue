@@ -12,7 +12,7 @@
       <PictureHome/>
     </div>
   </div>
-  <PictureAdd :mode="mode" @CancelAddPicture="switchToCancelAdd()" v-if="mode == 'create'"/> 
+      <PictureAdd :mode="mode" @CancelAddPicture="switchToCancelAdd()"  v-if="mode == 'create'"/> 
 </template>
 
 <script>

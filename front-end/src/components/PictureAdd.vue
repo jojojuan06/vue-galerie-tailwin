@@ -28,7 +28,7 @@
     </div>
 </template>
 <script>
-
+import { mapActions } from 'vuex'
 // IMPORT (mélange les getters en calcul avec l'opérateur de propagation d'objet)
 import { mapState } from 'vuex'
 
@@ -36,10 +36,7 @@ export default {
     name:'PictureAdd',
     // Props  est un attribut que vous pouvez définir au niveau du composant qui sera transmis directement au template
     props: { 
-        picture: {
-            type:Object
-        },
-        mode:String
+        mode:String,
     },
     data: function() {
         return { 
@@ -49,28 +46,24 @@ export default {
                     tags:"" 
                 },
             }
-        },    
+        },       
     computed: {
             //importation de l'objet depuis state
-            ...mapState(['status']) 
+            ...mapState(['status']) ,
         },
-    methods: {                                       
+    methods: {  
+        ...mapActions({add: 'createPicture'}),                                   
         CreatePicture(){ 
             let This = this; 
-            let CreatePicture = 
+             let AddPicture = 
                 {
                 name:this.form.name,
                 path:this.form.path,
                 tags:this.form.tags,
-            } 
-            this.$store.dispatch('createPicture', CreatePicture)
-            .then(function (){
-                This.CancelAddPicture()
-                //this.$store.commit('SETSTATUS' , {status:'success',message:`Votre Picture a etait mis a jour`});
-            }),
-            function (error) {
-                console.log(error);
-            }
+                } 
+            this.add({ picture:AddPicture }).then(() => { 
+            This.CancelAddPicture()
+            }).catch(error => (console.log(error)));
         },
         //annuler l'action , emettre un evenemznt avec emit
         CancelAddPicture() { 
