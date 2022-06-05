@@ -73,20 +73,20 @@ export default createStore({
       .then(response => {
         // recupere et met a jour les infos de l'image de response.data
         state.pictureInfos = {...response.data}
-        commit('SETSTATUS' , {status:'success' , message: ('votre picture as bien etait mise a jour')});    
+        commit('SETSTATUS' , {status:'success' , message: 'votre picture as bien etait mise a jour'});    
       }) //retourne la reponse des data dans l'objet vi
       .catch(error => { 
         commit('SETSTATUS' , {status:'error',message:`Nous faisons face à cette erreur ${error}`});
       });
     },  
-    createPicture: ({commit}, picture) => {
+    createPicture: ({commit}, {picture}) => {
       return new Promise((resolve, reject) => {
       //Pour invoquer   commit  mutation / Payload en 2e argument
       commit('SETSTATUS' , {status:'loading',message:''}); 
       //requete Post enregistrer l'utilisateur
-      axios.post('/pictures/', {picture}) 
+      axios.post('/pictures/', picture) 
       .then(response => { 
-        commit('SETSTATUS' , {status:'success' , message: response.data.message}); 
+        commit('SETSTATUS' , {status:'success' , message: 'votre picture as bien etait crée'}); 
       })
       .catch(error => {
         //message du back-end

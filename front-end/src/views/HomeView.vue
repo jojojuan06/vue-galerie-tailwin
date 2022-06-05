@@ -1,6 +1,7 @@
 <template>
-  <div class="flex flex-col" v-if="mode=='bydefault'">
-    <div class="flex flex-row justify-center md:justify-around flex-wrap">
+<div class="flex justify-center md:pt-4">
+    <div class="flex flex-col" v-if="mode=='bydefault'">
+    <div class="flex justify-center flex-row md:justify-around flex-wrap">
       <div class="flex  items-center">
       <h1 class="font-bold">{{ msg }}</h1>
       </div>
@@ -12,7 +13,9 @@
       <PictureHome/>
     </div>
   </div>
-      <PictureAdd :mode="mode" @CancelAddPicture="switchToCancelAdd()"  v-if="mode == 'create'"/> 
+    <PictureAdd :mode="mode" @CancelAddPicture="switchToCancelAdd()"  v-if="mode == 'create'"/> 
+</div>
+
 </template>
 
 <script>
